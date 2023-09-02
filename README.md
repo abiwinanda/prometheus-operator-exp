@@ -55,3 +55,8 @@ kubectl port-forward service/grafana 5000:80
 ```
 
 and login using `admin` user with the previously retrieved password.
+
+## References
+
+- https://prometheus-operator.dev/docs/user-guides/getting-started/
+- https://github.com/grafana/helm-charts/blob/main/charts/grafana/README.md
