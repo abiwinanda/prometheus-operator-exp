@@ -39,19 +39,19 @@ Access localhost port `4000` (or any port you choose) and check whether you have
 Create grafana by using helm
 
 ```sh
-helm install grafana ./grafana
+helm install grafana ./grafana -n monitoring
 ```
 
 Get the grafana `admin` password.
 
 ```sh
-kubectl get secret grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
+kubectl get secret grafana -n monitoring -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
 ```
 
 Port forward into the grafana
 
 ```sh
-kubectl port-forward service/grafana 5000:80
+kubectl port-forward service/grafana -n monitoring 5000:80
 ```
 
 and login using `admin` user with the previously retrieved password.
